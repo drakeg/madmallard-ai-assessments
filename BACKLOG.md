@@ -5,7 +5,7 @@ Priority: P0 before P1 before P2. Track implementation as GitHub issues and PRs.
 | Priority | Item | Sprint | Definition of done |
 |---|---|---|---|
 | P0 | Tenant/customer and consent model | 1 | authenticated, tested, audit logged |
-| P0 | Persist assessments in PostgreSQL | 1 | migrations, backup/restore test |
+| P0 | Persist assessments in PostgreSQL | 1 | initial schema added; migrations and backup/restore test pending |
 | P0 | Import ActivityWatch summaries | 2 | redacted, consent-gated, tested |
 | P0 | Elmo visibility adapter | 3 | model/prompt provenance stored |
 | P0 | Browser Use sandbox agent | 4 | allowlisted, rate-limited, test-only |

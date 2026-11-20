@@ -2,14 +2,18 @@
 
 Cadence: two-week sprints. Each sprint ends with demo, test evidence, review and backlog refinement.
 
-## Sprint 0 — Foundation (in progress)
+## Sprint 0 — Foundation (completed; security review continues in Sprint 1)
 - [x] Create repository, architecture, product scope and contributor guidance
 - [x] Docker Compose, health endpoint, initial dashboard and CI
 - [ ] Verify Docker environment on LAN and record smoke-test evidence
 - [x] Adopt centralized README badges and CI badge validation
 - [ ] Threat model and data retention review
 
-## Sprint 1 — Customers and assessments
+## Sprint 1 — Customers and assessments (in progress)
+- [x] PostgreSQL Compose service with persistent volume
+- [x] API-key-protected customer and assessment CRUD foundation
+- [x] Require scope and authorization reference when creating an assessment
+- [ ] Authenticated operator GUI, migrations, audit history and role-based access
 - Customer records, authorized scope, assessment lifecycle, role-based access, migrations and tests
 - Acceptance: authenticated operator can create, list, close and export assessments with audit history
 

@@ -1,7 +1,7 @@
 # Mad Mallard AI Assessments
 
 <!-- madmallard-badges:start -->
-[![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)](https://docs.docker.com/) [![Docker Compose](https://img.shields.io/badge/Docker%20Compose-2496ED?logo=docker&logoColor=white)](https://docs.docker.com/compose/) [![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/) [![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)](https://docs.docker.com/) [![Docker Compose](https://img.shields.io/badge/Docker%20Compose-2496ED?logo=docker&logoColor=white)](https://docs.docker.com/compose/) [![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/) [![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](https://www.python.org/) [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 
 [![ci](https://github.com/drakeg/madmallard-ai-assessments/actions/workflows/ci.yml/badge.svg)](https://github.com/drakeg/madmallard-ai-assessments/actions/workflows/ci.yml) [![Issues](https://img.shields.io/github/issues/drakeg/madmallard-ai-assessments)](https://github.com/drakeg/madmallard-ai-assessments/issues) [![Pull requests](https://img.shields.io/github/issues-pr/drakeg/madmallard-ai-assessments)](https://github.com/drakeg/madmallard-ai-assessments/pulls)
 <!-- madmallard-badges:end -->
@@ -15,6 +15,11 @@ Self-hosted, consent-first business assessment platform for Mad Mallard Solution
 
 ## Offer catalog
 The `/api/offers` endpoint exposes proposed assessment prices and optional monitoring prices as **unvalidated hypotheses**, not customer commitments. No billing or automated assessment execution is enabled.
+
+## Operator API (Sprint 1)
+Create a strong `OPERATOR_API_KEY` in `.env` before starting Docker Compose. The endpoints `POST /api/customers`, `GET /api/customers`, `POST /api/assessments`, `GET /api/assessments` and `POST /api/assessments/{id}/close` require `X-Operator-Key`. The API stores a customer, an explicitly authorized scope and authorization reference; it does **not** run automated tests or collect customer data.
+
+PostgreSQL persists to a named Docker volume; do not run `docker compose down -v` on a populated deployment. This is still a prototype: single operator key, no per-customer RBAC or migrations. Keep on a trusted LAN/VPN only.
 
 ## Quick start
 ```sh
