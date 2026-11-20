@@ -9,6 +9,17 @@ MODULES = [
     {"id": "lead-response", "name": "Lead Response", "source": "Browser Use", "status": "planned"},
 ]
 
+# Indicative offer prices from the source video; hypotheses, not validated sales.
+OFFERS = [
+    {"id": "time-leak", "assessment_usd": 999, "recurring_usd": None, "requires_authorization": True},
+    {"id": "ai-visibility", "assessment_usd": 999, "recurring_usd": 300, "requires_authorization": True},
+    {"id": "lead-response", "assessment_usd": 999, "recurring_usd": None, "requires_authorization": True},
+]
+
+@app.get('/api/offers')
+def offers():
+    return {"offers": OFFERS, "pricing_status": "hypothesis", "currency": "USD"}
+
 @app.get('/health')
 def health():
     return {"status": "ok", "phase": "sprint-0"}

@@ -6,6 +6,7 @@ Cadence: two-week sprints. Each sprint ends with demo, test evidence, review and
 - [x] Create repository, architecture, product scope and contributor guidance
 - [x] Docker Compose, health endpoint, initial dashboard and CI
 - [ ] Verify Docker environment on LAN and record smoke-test evidence
+- [x] Adopt centralized README badges and CI badge validation
 - [ ] Threat model and data retention review
 
 ## Sprint 1 — Customers and assessments
