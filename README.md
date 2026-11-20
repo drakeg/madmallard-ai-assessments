@@ -1,11 +1,20 @@
 # Mad Mallard AI Assessments
 
+<!-- madmallard-badges:start -->
+[![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)](https://docs.docker.com/) [![Docker Compose](https://img.shields.io/badge/Docker%20Compose-2496ED?logo=docker&logoColor=white)](https://docs.docker.com/compose/) [![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/) [![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+
+[![ci](https://github.com/drakeg/madmallard-ai-assessments/actions/workflows/ci.yml/badge.svg)](https://github.com/drakeg/madmallard-ai-assessments/actions/workflows/ci.yml) [![Issues](https://img.shields.io/github/issues/drakeg/madmallard-ai-assessments)](https://github.com/drakeg/madmallard-ai-assessments/issues) [![Pull requests](https://img.shields.io/github/issues-pr/drakeg/madmallard-ai-assessments)](https://github.com/drakeg/madmallard-ai-assessments/pulls)
+<!-- madmallard-badges:end -->
+
 Self-hosted, consent-first business assessment platform for Mad Mallard Solutions.
 
 ## Modules
 1. **Time Leak** — import approved ActivityWatch summaries, rank time sinks, recommend automation.
 2. **AI Visibility** — collect repeatable Elmo brand/competitor observations, with source and model metadata.
 3. **Lead Response** — authorized Browser Use synthetic journeys and response-time evidence.
+
+## Offer catalog
+The `/api/offers` endpoint exposes proposed assessment prices and optional monitoring prices as **unvalidated hypotheses**, not customer commitments. No billing or automated assessment execution is enabled.
 
 ## Quick start
 ```sh

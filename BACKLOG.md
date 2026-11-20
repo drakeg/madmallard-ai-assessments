@@ -15,3 +15,10 @@ Priority: P0 before P1 before P2. Track implementation as GitHub issues and PRs.
 | P1 | Accessible dashboard and trends | 5 | WCAG-oriented checks |
 | P1 | Prometheus/Grafana integration | 6 | documented metrics |
 | P2 | CRM integrations and approved outreach drafts | 6+ | explicit send approval |
+
+## Maintenance — Sprint 0
+- [x] Adopt dynamic README badges from centralized repository standards; validate in CI.
+- [ ] Revisit badge list whenever stack, license, workflow, release or deployment changes.
+
+## Product foundation — Sprint 0
+- [x] Add read-only offer catalog API with explicitly hypothetical pricing and consent requirement.
