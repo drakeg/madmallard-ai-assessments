@@ -6,8 +6,30 @@ services:
       - "0.0.0.0:${APP_PORT:-8096}:8096"
     environment:
       APP_ENV: development
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-assessments}:${POSTGRES_PASSWORD:-dev-only-change-me}@db:5432/${POSTGRES_DB:-assessments}
+      OPERATOR_API_KEY: ${OPERATOR_API_KEY:-}
+    depends_on:
+      db:
+        condition: service_healthy
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8096/health',timeout=3)"]
       interval: 30s
       timeout: 5s
       retries: 3
+
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-assessments}
+      POSTGRES_USER: ${POSTGRES_USER:-assessments}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-dev-only-change-me}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-assessments} -d ${POSTGRES_DB:-assessments}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+volumes:
+  postgres_data:

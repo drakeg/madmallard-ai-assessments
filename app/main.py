@@ -1,7 +1,12 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
+from app.records import router, Base, engine
+
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Mad Mallard AI Assessments", version="0.0.1")
+
+app.include_router(router)
 
 MODULES = [
     {"id": "time-leak", "name": "Time Leak", "source": "ActivityWatch", "status": "planned"},
