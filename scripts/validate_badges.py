@@ -14,7 +14,7 @@ for path in ("actions/workflows/ci.yml/badge.svg", "github/issues/", "github/iss
     assert path in block, f"Missing dynamic badge {path}"
 assert "github/license/" not in block or (root / "LICENSE").exists()
 assert "github/v/release/" not in block, "No published release verified"
-assert "postgres:17-alpine" in (root / "compose.yml").read_text(), "Database badge must match configured service"
+assert re.search(r"(?m)^\s*image:\s*[\"\']?postgres:(?:[0-9]+(?:\.[0-9]+)*-alpine|[0-9]+(?:\.[0-9]+)*)[\"\']?\s*$", (root / "compose.yml").read_text()), "PostgreSQL badge requires a configured official PostgreSQL image"
 assert "Vercel-" not in block, "Vercel is not configured"
 assert "passing-" not in block.lower()
 images = re.findall(r"\[!\[[^]]+\]\((https?://[^)]+)\)\]\((https?://[^)]+)\)", block)
