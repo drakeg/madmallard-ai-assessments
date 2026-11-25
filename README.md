@@ -1,5 +1,8 @@
 # Mad Mallard AI Assessments
 
+[![License](https://img.shields.io/github/license/drakeg/madmallard-ai-assessments)](https://github.com/drakeg/madmallard-ai-assessments/blob/main/LICENSE)
+
+
 <!-- madmallard-badges:start -->
 [![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)](https://docs.docker.com/) [![Docker Compose](https://img.shields.io/badge/Docker%20Compose-2496ED?logo=docker&logoColor=white)](https://docs.docker.com/compose/) [![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/) [![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](https://www.python.org/) [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 
